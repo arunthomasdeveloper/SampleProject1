@@ -1,0 +1,30 @@
+
+.Favailable {
+    background-image: url("../../../assets/images/Available.png");
+    background-repeat: no-repeat;
+    background-size: 38px 24px;
+    height: 24px;
+    width: 38px;
+  }
+  .FNotavailable {
+    background-image: url("../../../assets/images/Available.png");
+    opacity: 0.2;
+    background-repeat: no-repeat;
+    background-size: 38px 24px;
+    height: 24px;
+    width: 38px;
+  }
+  
+  p {
+    font-family: Lato;
+  }
+  .error-message {
+    color: red;
+  }
+  input.ng-touched.ng-invalid {
+    border: 1px solid red;
+  }
+  pre {
+    color: #e7eef5 !important;
+  }
+  

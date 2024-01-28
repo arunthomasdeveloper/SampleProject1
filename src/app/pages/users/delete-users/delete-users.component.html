@@ -1,0 +1,42 @@
+<form [formGroup]="userInfoForm"  *ngIf="UpdateUserForm">
+    <div class="row">
+        <div class="col-md-12">
+            <nb-card >
+                <nb-card-header>Users</nb-card-header>
+                <nb-card-body>
+                    <div>
+                        <nb-select placeholder="SelcecUser" formControlName="selectedUser">
+
+                            <nb-option *ngFor="let user of users" [value]="user.id">
+                                {{ user.username}}
+                            </nb-option>
+                        </nb-select>
+                        <button type="submit" (click)="getUser()" nbButton>Get User</button>
+                    </div>
+                
+                </nb-card-body>
+            </nb-card>
+        </div>
+
+    </div>
+    <div class="row" *ngIf="UpdateFormsubform">
+        <div class="col-md-12">
+            <nb-card>
+                <nb-card-header>Delete user</nb-card-header>
+                <nb-card-body>
+                    <div>
+
+                        <div class="form-group"><input disabled="disabled" formControlName="firstName" nbInput placeholder="First Name"></div>
+                        <div class="form-group" ><input disabled="disabled"  formControlName="lastName" nbInput placeholder="Last Name"></div>
+                        <div class="form-group" ><input disabled="disabled"  formControlName="userName" nbInput placeholder="User Name"></div>
+                        <div class="form-group" ><input disabled="disabled"  formControlName="email" nbInput placeholder="Email"></div>
+                        <div class="form-group" ><input *ngIf="false" disabled="disabled"  formControlName="password" nbInput placeholder="Password"></div>
+                        <div class="form-group" ><input *ngIf="false"  disabled="disabled"  formControlName="cnfpassword" nbInput placeholder="Confirm Password"></div>
+                        <button type="submit" (click)="disableUser()" nbButton>Delete User</button>
+                        <div>{{Result}}</div>
+                    </div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+    </div>
+</form>

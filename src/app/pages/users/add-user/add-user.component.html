@@ -1,0 +1,228 @@
+<form [formGroup]="userInfoForm" *ngIf="addUserForm">
+
+    <div class="col-md-12">
+      <nb-card>
+        <nb-card-header>User Contact Info</nb-card-header>
+        <nb-card-body>
+          <div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>User Name*</label>
+                  <div class="row ">
+                    <div class="col-sm-6">
+                      <input class="form-control" (keyup)="onKeydownUN($event)" nbInput formControlName="userName"
+                        type="text" />
+                    </div>
+                    <div class="col-sm-6">
+                      <button [ngClass]="userNameValid?'Favailable':'FNotavailable'" [disabled]="!userNameValid"
+                        type="submit" (click)="checkUserNameAvailability()" class="Favailable" nbButton></button>
+                    </div>
+                    <div class="col-sm-6"></div>
+                    <label *ngIf="userExists">User is available</label>
+                    <label *ngIf="!userExists">User is not available</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="error-messages">
+            <ng-container *ngFor="let error of error_messages.userName">
+              <div class="error-message"
+                *ngIf="userInfoForm.get('userName').hasError(error.type) && (userInfoForm.get('userName').dirty || userInfoForm.get('userName').touched)">
+                {{ error.message }}
+              </div>
+            </ng-container>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>First Name*</label>
+                <input class="form-control" nbInput formControlName="firstName" type="text" />
+              </div>
+              <div class="error-messages">
+                <ng-container *ngFor="let error of error_messages.firstName">
+                  <div class="error-message"
+                    *ngIf="userInfoForm.get('firstName').hasError(error.type) && (userInfoForm.get('firstName').dirty || userInfoForm.get('firstName').touched)">
+                    {{ error.message }}
+                  </div>
+                </ng-container>
+              </div>
+
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Last Name*</label>
+                <input class="form-control" nbInput formControlName="lastName" type="text" />
+              </div>
+              <div class="error-messages">
+                <ng-container *ngFor="let error of error_messages.lastName">
+                  <div class="error-message"
+                    *ngIf="userInfoForm.get('lastName').hasError(error.type) && (userInfoForm.get('lastName').dirty || userInfoForm.get('lastName').touched)">
+                    {{ error.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>AddressLine1*</label>
+                <input class="form-control" nbInput formControlName="addressLine1" type="text" />
+              </div>
+              <div class="error-messages">
+                <ng-container *ngFor="let error of error_messages.addressLine1">
+                  <div class="error-message"
+                    *ngIf="userInfoForm.get('addressLine1').hasError(error.type) && (userInfoForm.get('addressLine1').dirty || userInfoForm.get('addressLine1').touched)">
+                    {{ error.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>AddressLine2*</label>
+                <input class="form-control" nbInput formControlName="addressLine2" type="text" />
+              </div>
+              <div class="error-messages">
+                <ng-container *ngFor="let error of error_messages.addressLine2">
+                  <div class="error-message"
+                    *ngIf="userInfoForm.get('addressLine2').hasError(error.type) && (userInfoForm.get('addressLine2').dirty || userInfoForm.get('addressLine2').touched)">
+                    {{ error.message }}
+                  </div>
+                </ng-container>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>AddressLine3*</label>
+            <input class="form-control" nbInput formControlName="addressLine3" type="text" />
+          </div>
+          <div class="error-messages">
+            <ng-container *ngFor="let error of error_messages.addressLine3">
+              <div class="error-message"
+                *ngIf="userInfoForm.get('addressLine3').hasError(error.type) && (userInfoForm.get('addressLine3').dirty || userInfoForm.get('addressLine3').touched)">
+                {{ error.message }}
+              </div>
+            </ng-container>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Country*</label>
+                <input class="form-control" nbInput formControlName="country" type="text" />
+              </div>
+              <div class="error-messages">
+                <ng-container *ngFor="let error of error_messages.country">
+                  <div class="error-message"
+                    *ngIf="userInfoForm.get('country').hasError(error.type) && (userInfoForm.get('country').dirty || userInfoForm.get('country').touched)">
+                    {{ error.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Country Code*</label>
+                <input class="form-control" nbInput formControlName="countryCode" type="text" />
+              </div>
+              <div class="error-messages">
+                <ng-container *ngFor="let error of error_messages.countryCode">
+                  <div class="error-message"
+                    *ngIf="userInfoForm.get('countryCode').hasError(error.type) && (userInfoForm.get('countryCode').dirty || userInfoForm.get('countryCode').touched)">
+                    {{ error.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>MobileNo*</label>
+                <input class="form-control" nbInput formControlName="mobileNo" type="text" />
+              </div>
+              <div class="error-messages">
+                <ng-container *ngFor="let error of error_messages.mobileNo">
+                  <div class="error-message"
+                    *ngIf="userInfoForm.get('mobileNo').hasError(error.type) && (userInfoForm.get('mobileNo').dirty || userInfoForm.get('mobileNo').touched)">
+                    {{ error.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>PostCode*</label>
+                <input class="form-control" nbInput formControlName="postCode" type="text" />
+              </div>
+              <div class="error-messages">
+                <ng-container *ngFor="let error of error_messages.postCode">
+                  <div class="error-message"
+                    *ngIf="userInfoForm.get('postCode').hasError(error.type) && (userInfoForm.get('postCode').dirty || userInfoForm.get('postCode').touched)">
+                    {{ error.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <label>Email Id*</label>
+            <input class="form-control" nbInput formControlName="email" type="text" />
+          </div>
+          <div class="error-messages">
+            <ng-container *ngFor="let error of error_messages.email">
+              <div class="error-message"
+                *ngIf="userInfoForm.get('email').hasError(error.type) && (userInfoForm.get('email').dirty || userInfoForm.get('email').touched)">
+                {{ error.message }}
+              </div>
+            </ng-container>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Password*</label>
+                <input class="form-control" nbInput formControlName="password" type="password" />
+              </div>
+              <div class="error-messages">
+                <ng-container *ngFor="let error of error_messages.password">
+                  <div class="error-message"
+                    *ngIf="userInfoForm.get('password').hasError(error.type) && (userInfoForm.get('password').dirty || userInfoForm.get('password').touched)">
+                    {{ error.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Confirm Password*</label>
+                <input class="form-control" nbInput formControlName="confirmpassword" type="password" />
+              </div>
+              <div class="error-messages">
+                <ng-container *ngFor="let error of error_messages.confirmpassword">
+                  <div class="error-message"
+                    *ngIf="userInfoForm.get('confirmpassword').hasError(error.type) && (userInfoForm.get('confirmpassword').dirty || userInfoForm.get('confirmpassword').touched)">
+                    {{ error.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+          <pre class="error-messages">
+                Form Error - {{ userInfoForm.errors | json }}
+              </pre>
+          <button class="form-control btn btn-primary" (click)="onFormSubmit()"
+            [disabled]="!userInfoForm.valid">Submit</button>
+    
+    </nb-card-body>
+    </nb-card>
+  </div>
+
+</form>

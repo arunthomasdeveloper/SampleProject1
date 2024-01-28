@@ -1,0 +1,23 @@
+::ng-deep .navigation .link nb-icon{
+    display: none !important;
+  }
+  .hzHRDW.is-invalid > :last-child::before{
+  content: url(../../../assets/images/error-icon.svg);
+  margin-right: 4px;
+  height: 24px;
+  }
+ 
+  
+  p {
+    font-family: Lato;
+  }
+  .error-message {
+    color: red;
+  }
+  input.ng-touched.ng-invalid {
+    border: 1px solid red;
+  }
+  pre {
+    color: #e7eef5 !important;
+  }
+  

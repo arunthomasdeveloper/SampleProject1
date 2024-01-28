@@ -1,0 +1,30 @@
+<p>reset-pass works!</p>
+
+<form [formGroup]="resetPassForm" >
+    <div class="row">
+        <div class="col-md-12">
+            <nb-card>
+                <nb-card-header>Reset Password</nb-card-header>
+                <nb-card-body>
+                    <div>
+                        <div class="form-group">
+                            <label>Confirm Password*</label>
+                            <input class="form-control" nbInput formControlName="confirmpassword" type="password" />
+                          </div>
+                          <div class="error-messages">
+                            <ng-container *ngFor="let error of error_messages.confirmpassword">
+                              <div class="error-message" *ngIf="userInfoForm.get('confirmpassword').hasError(error.type) && (resetPassForm.get('confirmpassword').dirty || resetPassForm.get('confirmpassword').touched)">
+                                {{ error.message }}
+                              </div>
+                            </ng-container>
+                          </div>
+                          <pre class="error-messages">
+                            Form Error - {{ resetPassForm.errors | json }}
+                          </pre>
+                          <button class="form-control btn btn-primary" (click)="onFormSubmit()" [disabled]="!resetPassForm.valid">Submit</button>
+                    </div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+    </div>
+</form>

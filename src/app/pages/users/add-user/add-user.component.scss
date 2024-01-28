@@ -1,0 +1,48 @@
+nb-checkbox {
+  margin-bottom: 1rem;
+}
+
+.form-inline [fullWidth] {
+  flex: 1;
+}
+
+.form-inline>* {
+  margin: 0 1.5rem 1.5rem 0;
+}
+
+nb-card.inline-form-card nb-card-body {
+  padding-bottom: 0;
+}
+
+nb-card.hidethis {
+  display: none;
+}
+
+.Favailable {
+  background-image: url("../../../../assets/images/Available.png");
+  background-repeat: no-repeat;
+  background-size: 38px 24px;
+  height: 24px;
+  width: 38px;
+}
+.FNotavailable {
+  background-image: url("../../../../assets/images/Available.png");
+  opacity: 0.2;
+  background-repeat: no-repeat;
+  background-size: 38px 24px;
+  height: 24px;
+  width: 38px;
+}
+
+p {
+  font-family: Lato;
+}
+.error-message {
+  color: red;
+}
+input.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+pre {
+  color: #e7eef5 !important;
+}
